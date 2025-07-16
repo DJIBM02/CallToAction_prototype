@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CTA Bookmaker - Pronostic Foot</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Raleway, sans-serif;
+      background-color: #f5f7fa;
+      padding: 20px;
+      margin: 0;
+    }
+
+    .freebet-full {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: rgba(0,0,0,.4) 0px 8px 12px 0px;
+      overflow: hidden;
+      color: #031c2d;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .freebet-full__bookmaker {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-width: 180px;
+      padding: 25px 20px;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      border-radius: 8px;
+      margin-right: 15px;
+    }
+
+    .freebet-full__bookmaker__logo {
+      color: white;
+      font-size: 26px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+    }
+
+    .freebet-full__bookmaker__link {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .freebet-full__bookmaker__link:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .freebet-full__info__hold {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .freebet-full__info {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 0 15px;
+    }
+
+    .freebet-full__title__hold {
+      flex: 1;
+    }
+
+    .freebet-full__type {
+      color: #8e9aaf;
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .freebet-full__title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #031c2d;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .freebet-full__subtitle {
+      font-size: 14px;
+      color: #495057;
+      margin-bottom: 8px;
+    }
+
+    .freebet-full__features {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .feature-badge {
+      background: linear-gradient(135deg, #17a2b8 0%, #20c997 100%);
+      color: white;
+      padding: 2px 6px;
+      border-radius: 10px;
+      font-size: 9px;
+      font-weight: bold;
+    }
+
+    .freebet-full__rating {
+      text-align: center;
+      border-left: 1px solid #e9ecef;
+      border-right: 1px solid #e9ecef;
+      padding: 0 20px;
+    }
+
+    .freebet-full__rating__text {
+      color: #8e9aaf;
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .stars {
+      color: #ffaf00;
+      font-size: 16px;
+      letter-spacing: 2px;
+      margin-bottom: 4px;
+    }
+
+    .rating-score {
+      font-size: 13px;
+      font-weight: bold;
+      color: #031c2d;
+      margin-bottom: 2px;
+    }
+
+    .rating-details {
+      font-size: 9px;
+      color: #6c757d;
+    }
+
+    .freebet-full__visit {
+      background: linear-gradient(135deg, #28a745 0%, #34ce57 100%);
+      color: white;
+      padding: 12px 18px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 13px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(40, 167, 69, 0.2);
+      min-width: 140px;
+      text-align: center;
+    }
+
+    .freebet-full__visit:hover {
+      background: linear-gradient(135deg, #218838 0%, #28a745 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+    }
+
+    .freebet-full__terms {
+      padding: 12px 15px 0;
+      border-top: 1px solid #f0f0f0;
+      margin-top: 12px;
+    }
+
+    .freebet-full__terms p {
+      font-size: 10px;
+      color: #6c757d;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .freebet-full {
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      .freebet-full__bookmaker {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-right: 0;
+        margin-bottom: 15px;
+        padding: 15px 20px;
+      }
+
+      .freebet-full__bookmaker__logo {
+        margin-bottom: 0;
+      }
+
+      .freebet-full__info {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0;
+      }
+
+      .freebet-full__rating {
+        border-left: none;
+        border-right: none;
+        border-top: 1px solid #e9ecef;
+        border-bottom: 1px solid #e9ecef;
+        padding: 15px 0;
+        width: 100%;
+      }
+
+      .freebet-full__visit {
+        width: 100%;
+      }
+
+      .freebet-full__terms {
+        padding: 12px 0 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="freebet-full">
+    <div class="freebet-full__bookmaker">
+      <div class="freebet-full__bookmaker__logo">BetWinner</div>
+      <a href="#" class="freebet-full__bookmaker__link">Lire avis</a>
+    </div>
+    
+    <div class="freebet-full__info__hold">
+      <div class="freebet-full__info">
+        <div class="freebet-full__title__hold">
+          <div class="freebet-full__type">Offre de Bienvenue</div>
+          <div class="freebet-full__title">100€ de Bonus de Bienvenue</div>
+          <div class="freebet-full__subtitle">+ 50 Tours Gratuits</div>
+          <div class="freebet-full__features">
+            <span class="feature-badge">⚡ Retrait 24h</span>
+            <span class="feature-badge">📱 App Mobile</span>
+            <span class="feature-badge">🎯 Pari en Live</span>
+          </div>
+        </div>
+        
+        <div class="freebet-full__rating">
+          <div class="freebet-full__rating__text">Note du bookmaker</div>
+          <div>
+            <span class="stars">★★★★★</span>
+          </div>
+          <div class="rating-score">4.8/5</div>
+          <div class="rating-details">2,847 avis • Excellent</div>
+        </div>
+        
+        <a href="https://affiliate-link.com" rel="nofollow" class="freebet-full__visit" target="_blank">Visiter le Bookmaker</a>
+      </div>
+      
+      <div class="freebet-full__terms">
+        <p>18+. Nouveaux clients uniquement. Dépôt min 10€ jusqu'à 100€. Mise x5 sur paris sportifs. Validité 30 jours. Paris simples, combinés autorisés. 50 tours gratuits sur Book of Dead. Code promo: FOOT100. Paiements: Visa, MasterCard, PayPal, Skrill, Neteller, Crypto. Retrait sous 24h. Licence Curaçao n°8048/JAZ. Support FR 24/7. www.begambleaware.org. Conditions générales applicables. #ad</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
